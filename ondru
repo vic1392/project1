@@ -1,0 +1,14 @@
+def is_armstrong(number):
+    # Convert the number to a string to easily iterate over digits
+    digits = str(number)
+    # Calculate the length of the number (number of digits)
+    num_digits = len(digits)
+    # Calculate the sum of the digits raised to the power of the number of digits
+    sum_of_powers = sum(int(digit) ** num_digits for digit in digits)
+    # Return True if the sum equals the original number
+    return sum_of_powers == number
+
+# Loop through numbers from 1 to 1000
+for num in range(1, 1001):
+    if is_armstrong(num):
+        print(num)
